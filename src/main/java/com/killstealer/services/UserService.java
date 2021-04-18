@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserService {
     @Autowired
@@ -15,8 +17,8 @@ public class UserService {
     @Autowired
     private MyUserDetailsService myUserDetailsService;
 
-    public User findCurrentUser() {
-        String username = SecurityContextHolder.getContext().getAuthentication().getName();
-        return userRepo.findByUsername(username);
+    public List<User> getAllUsers() {
+        return userRepo.findAll();
     }
+    
 }
