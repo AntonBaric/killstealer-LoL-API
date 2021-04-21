@@ -4,6 +4,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 application.properties
+src/main/java/com/killstealer/API/SecretAPIKeys.java
 
 ### STS ###
 .apt_generated

@@ -23,10 +23,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(HttpMethod.GET, "/", "/rest/**").permitAll()
                 .antMatchers("/auth/**").permitAll()
+                .antMatchers(HttpMethod.POST, "/rest/**", "/rest/login").permitAll()
                 .antMatchers("/rest/**").authenticated()
                 .and()
                 .formLogin()
-                //.loginPage("/login") // custom login page
+                .loginPage("/login") // custom login page
         ;
     }
 

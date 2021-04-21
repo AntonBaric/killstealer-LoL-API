@@ -3,11 +3,9 @@ package com.killstealer.controllers;
 import com.killstealer.entities.User;
 import com.killstealer.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -21,4 +19,23 @@ public class UserController {
         return userService.getAllUsers();
     }
 
+    @GetMapping("/users/{id}")
+    public User getUserById(@PathVariable long id) {
+        return userService.getUserById(id);
+    }
+
+    @PostMapping("/users")
+    public User register(@RequestBody User user) {
+        return userService.register(user);
+    }
+
+    @PostMapping("/login")
+    public User login(@RequestBody User user, HttpServletRequest req) {
+        return userService.login(user, req);
+    }
+
+    @GetMapping("/whoami")
+    public User whoAmI() {
+        return userService.whoAmI();
+    }
 }
