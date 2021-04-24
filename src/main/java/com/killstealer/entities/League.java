@@ -1,9 +1,11 @@
 package com.killstealer.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class League {
+    @Id
     private String summonerId;
     private String summonerName;
     private int leaguePoints;
