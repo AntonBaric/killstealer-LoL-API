@@ -1,9 +1,11 @@
 package com.killstealer.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Match {
+    @Id
     private String matchId;
 
     public Match() {

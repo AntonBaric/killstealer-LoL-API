@@ -1,10 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
-import Challenger from './components/Challenger';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import NavBar from './components/NavBar'
+import Summoner from './components/Summoner'
 
 function App() {
   return (
+    <Router>
     <div className="App">
+      <NavBar />
+      <Switch>
+        <Route exact path="/summoner/:summonerName">
+          <Summoner />
+        </Route>
+      </Switch>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -17,10 +26,10 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
-          <Challenger />
         </a>
       </header>
     </div>
+    </Router>
   );
 }
 

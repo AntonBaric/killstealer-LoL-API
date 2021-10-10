@@ -27,9 +27,6 @@ public class MatchService {
 
         List<Match> matches = new ArrayList<>();
 
-        for(match : matches) {
-            String matchId = response.get("ma")
-            Match match = new Match(matchId);
-        }
+        return null;
     }
 }
